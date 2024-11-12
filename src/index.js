@@ -1,15 +1,15 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import './css/UploadFile.css';
-import './css/ChoosePrinter.css';
-import './css/Checkout.css';
-import UploadFile from './js/UploadFile';
-import ChoosePrinter from './js/ChoosePrinter';
-import reportWebVitals from './js/reportWebVitals';
-import Checkout from './js/Checkout';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import "./css/UploadFile.css";
+import "./css/ChoosePrinter.css";
+import "./css/Checkout.css";
+import UploadFile from "./js/UploadFile";
+import ChoosePrinter from "./js/ChoosePrinter";
+import reportWebVitals from "./js/reportWebVitals";
+import Checkout from './js/Checkout'; 
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <BrowserRouter>

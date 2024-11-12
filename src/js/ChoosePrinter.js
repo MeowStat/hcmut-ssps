@@ -28,10 +28,10 @@ const ChoosePrinter = () => {
   };
 
   // Reset selectedPrinter khi chuyển campus
-  const handleCampusChange = (e) => {
-    setSelectedCampus(e.target.value);
-    setSelectedPrinter(null); // Reset máy in đã chọn
-  };
+  // const handleCampusChange = (e) => {
+  //   setSelectedCampus(e.target.value);
+  //   setSelectedPrinter(null); // Reset máy in đã chọn
+  // };
 
   // Timer countdown
   useEffect(() => {

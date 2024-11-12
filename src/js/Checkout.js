@@ -21,12 +21,23 @@ const Checkout = () => {
     return `${String(mins).padStart(2, "0")}:${String(secs).padStart(2, "0")}`;
   };
 
-  const files = [
-    { name: "file1.txt", pages: 1 },
-    { name: "file2.docx", pages: 34 },
-    { name: "file3.pdf", pages: 15 },
-  ];
-
+  // Add these near the top of your component
+  const [printerDetails] = useState({
+    campus: "Campus 1",
+    building: "H1",
+    printer: "HP LaserJet 001",
+    config: {
+      copies: 1,
+      pageSize: "A4",
+      orientation: "Portrait",
+      mode: "Black & White",
+    },
+  });
+  const [files] = useState([
+    { name: "File 1", pages: 10 },
+    { name: "File 2", pages: 5 },
+    { name: "File 3", pages: 7 },
+  ]);
   // Tính tổng số trang
   const totalPages = files.reduce((sum, file) => sum + file.pages, 0);
   const handleBack = () => {
@@ -45,41 +56,87 @@ const Checkout = () => {
         </div>
       </div>
       <hr
-          style={{
-            border: "none",
-            borderTop: "2px dashed #000000",
-            width: "100%", // Làm cho đường kẻ dài hơn
-            marginLeft: "10%", // Để căn chỉnh lại cho cân đối
-            height: "0.5px",
-          }}
-        />
+        style={{
+          border: "none",
+          borderTop: "1px dashed #000000",
+          width: "80%", // Làm cho đường kẻ dài hơn
+          marginLeft: "10%", // Để căn chỉnh lại cho cân đối
+          height: "0.1px",
+        }}
+      />
       <div className="content">
         <div className="address">
-          <h2>Campus: </h2>
-          <h2>Building: </h2>
-          <h2>Printer: </h2>
-        </div>
-        <div className="config">
-          <h2>Config: </h2>
-          <div className="config-item">
-            <h2>Copies: </h2>
-            <h2>Page size: </h2>
-            <h2>Orientation: </h2>
-            <h2>Mode: </h2>
+          <div className="address-item">
+            <h2>Campus:</h2>
+            <h2>{printerDetails.campus}</h2>
+          </div>
+          <div className="address-item">
+            <h2>Building:</h2>
+            <h2>{printerDetails.building}</h2>
+          </div>
+          <div className="address-item">
+            <h2>Printer:</h2>
+            <h2>{printerDetails.printer}</h2>
           </div>
         </div>
-        <div className="list-file">
-          <h2>List of file: </h2>
-          {files.map((file, index) => (
-            <div className="file-item" key={index}>
-              <h3>{file.name}</h3>
-              <h3>{file.pages} pages</h3>
+        <div className="config">
+          <div className="config-header">
+            <h2>Configuration: </h2>
+          </div>
+          <div className="config-content">
+            <div className="config-column">
+              <div className="config-item">
+                Copies : {printerDetails.config.copies}
+              </div>
+              <div className="config-item">
+                Orientation : {printerDetails.config.orientation}
+              </div>
             </div>
-          ))}
+            <div className="config-column">
+              <div className="config-item">
+                Page size : {printerDetails.config.pageSize}
+              </div>
+              <div className="config-item">
+                Mode : {printerDetails.config.mode}
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="table-container">
+          <div className="table-header">List of files</div>
+          <table className="files-table">
+            <tbody>
+              {files.map((file, index) => (
+                <tr key={index}>
+                  <td>{file.name}</td>
+                  <td>{file.pages} pages</td>
+                </tr>
+              ))}
+              <tr className="total-row">
+                <td>
+                  <strong>Total:</strong>
+                </td>
+                <td>
+                  <strong>{totalPages} pages</strong>
+                </td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
-      <button onClick={handleBack}>Back</button>
-      {/* <button onClick={handleNext}>Checkout</button> */}
+      <hr
+        style={{
+          border: "none",
+          borderTop: "1px dashed #000000",
+          width: "80%", // Làm cho đường kẻ dài hơn
+          marginLeft: "10%", // Để căn chỉnh lại cho cân đối
+          height: "0.1px",
+        }}
+      />
+      <div className="button-group">
+        <button onClick={handleBack}>Back</button>
+        {/* <button onClick={handleNext}>Checkout</button> */}
+      </div>
     </div>
   );
 };
