@@ -107,10 +107,11 @@ const UploadFile = () => {
       <div className="config-section">
         <hr
           style={{
+            marginLeft: "-2.4%",
             border: "none",
             borderTop: "2px dashed #000000",
             width: "100%", // Làm cho đường kẻ dài hơn
-            marginLeft: "10%", // Để căn chỉnh lại cho cân đối
+            //marginLeft: "10%", // Để căn chỉnh lại cho cân đối
             height: "0.5px",
           }}
         />

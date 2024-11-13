@@ -114,17 +114,13 @@ const ChoosePrinter = () => {
       </div>
 
       <div className="note">
-        Note: After choosing a printer, you will have 5 minutes to checkout
+        <h2>Note:</h2>
+        <p>After choosing a printer, you will have 5 minutes to checkout </p>
       </div>
 
-      <div className="buttons">
+      <div className="buttons-choose-printer">
         <button className="back-button" onClick={handleBack}>Back</button>
-        <button 
-          className="next-button"
-          onClick={handleNext}
-        >
-          Next
-        </button>
+        <button className="next-button" onClick={handleNext}>Next</button>
       </div>
     </div>
   );

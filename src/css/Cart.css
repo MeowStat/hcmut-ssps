@@ -1,0 +1,99 @@
+.cart-container {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.cart-header {
+    color: #1a73e8;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.cart-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.cart-table th,
+.cart-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.cart-table th {
+    background-color: #f8f9fa;
+}
+
+.quantity-control {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.quantity-btn {
+    background-color: #e0e0e0;
+    border: none;
+    padding: 4px 8px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.quantity-input {
+    width: 50px;
+    text-align: center;
+    padding: 4px;
+}
+
+.checkbox-item {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.cart-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    border-top: 1px solid #ddd;
+}
+
+.cart-summary {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 30%;
+    width: 100%; 
+}
+
+.total-checkout {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-left: auto; /* Added to push to the right */
+}
+
+.total {
+    margin-left: 20px;
+}
+
+.total-amount {
+    font-weight: bold;
+}
+
+.checkout-btn {
+    background-color: #0066ff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.checkout-btn:hover {
+    background-color: #0052cc;
+}

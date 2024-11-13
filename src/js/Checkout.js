@@ -59,7 +59,7 @@ const Checkout = () => {
         style={{
           border: "none",
           borderTop: "1px dashed #000000",
-          width: "80%", // Làm cho đường kẻ dài hơn
+          width: "60%", // Làm cho đường kẻ dài hơn
           marginLeft: "10%", // Để căn chỉnh lại cho cân đối
           height: "0.1px",
         }}
@@ -128,14 +128,18 @@ const Checkout = () => {
         style={{
           border: "none",
           borderTop: "1px dashed #000000",
-          width: "80%", // Làm cho đường kẻ dài hơn
+          width: "60%", // Làm cho đường kẻ dài hơn
           marginLeft: "10%", // Để căn chỉnh lại cho cân đối
           height: "0.1px",
         }}
       />
+      <div className="note">
+        <h2>Note:</h2>
+        <p>After choosing a printer, you will have 5 minutes to checkout </p>
+      </div>
       <div className="button-group">
-        <button onClick={handleBack}>Back</button>
-        {/* <button onClick={handleNext}>Checkout</button> */}
+        <button className="back-button-checkout" onClick={handleBack}>Back</button>
+        <button className="next-button-checkout">Checkout</button>
       </div>
     </div>
   );
