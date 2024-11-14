@@ -6,15 +6,20 @@ import "./css/ChoosePrinter.css";
 import "./css/Checkout.css";
 import UploadFile from "./js/UploadFile";
 import ChoosePrinter from "./js/ChoosePrinter";
+import Homepage from './js/homepage';
 import reportWebVitals from "./js/reportWebVitals";
 import Checkout from './js/Checkout'; 
+import Welcome from './js/welcome';
+
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<UploadFile />} />
+      <Route path="/" element={<Homepage />} />
+        <Route path="/welcome" element={<Welcome />} />
+        <Route path="/UploadFile" element={<UploadFile />} />
         <Route path="/ChoosePrinter" element={<ChoosePrinter />} />
         <Route path="/Checkout" element={<Checkout />} />
         {/* <Route path="/Checkout" element={<Checkout />} /> */}
