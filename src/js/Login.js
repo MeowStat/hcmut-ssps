@@ -1,10 +1,12 @@
 // src/js/Login.js
 import React from 'react';
 import '../css/Login.css';
-
+import Navbar from './Navbar';
+import Footer from './Footer';
 const Login = () => {
   return (
     <div className="page-container">
+      <Navbar />
       <div className="content-wrap">
         <div className="login-container">
           <h1 className="title">HCMUT</h1>
@@ -17,6 +19,7 @@ const Login = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };
