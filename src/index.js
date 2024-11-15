@@ -8,6 +8,8 @@ import ChoosePrinter from "./js/ChoosePrinter";
 import reportWebVitals from "./js/reportWebVitals";
 import Checkout from './js/Checkout'; 
 import App from './App';
+import Login from './js/Login';
+
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -15,6 +17,7 @@ root.render(
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<App />} />
+        <Route path="/Login" element={<Login />} />
         <Route path="/ChoosePrinter" element={<ChoosePrinter />} />
         <Route path="/Checkout" element={<Checkout />} />
         {/* <Route path="/Checkout" element={<Checkout />} /> */}

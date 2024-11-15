@@ -19,12 +19,12 @@ const Navbar = () => {
         <li><a href="#">Buy pages</a></li>
       </ul>
       <div className="user-info">
-        <div className="icon">
-          <FontAwesomeIcon icon={faBell} />
+        <div className="icon hover-effect">
+          <FontAwesomeIcon icon={faBell} className="icon-animate" />
           <span className="icon-badge">{notificationCount}</span>
         </div>
-        <div className="icon">
-          <FontAwesomeIcon icon={faShoppingBag} />
+        <div className="icon hover-effect">
+          <FontAwesomeIcon icon={faShoppingBag} className="icon-animate" />
           <span className="icon-badge">{bagCount}</span>
         </div>
         <img className="avatar" src="/ava.jpg" alt="User Avatar" />
