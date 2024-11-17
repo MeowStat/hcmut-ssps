@@ -15,7 +15,7 @@ import Welcome from './js/welcome';
 
 import LoginPage from './js/LoginPage';
 import SPSOMenu from "./js/SPSOMenu";
-import SPSOApp from "./js/SPSOApp";
+import SPSOApp from "./SPSOApp";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -23,11 +23,11 @@ root.render(
     <BrowserRouter>
       <Routes>
       <Route path="/" element={<Homepage />} />
-        <Route path="/welcome" element={<Welcome />} />
+        {/* <Route path="/welcome" element={<Welcome />} />
         <Route path="/UploadFile" element={<App />} />
         <Route path="/Login" element={<Login />} />
         <Route path="/ChoosePrinter" element={<ChoosePrinter />} />
-        <Route path="/Checkout" element={<Checkout />} />
+        <Route path="/Checkout" element={<Checkout />} /> */}
         {/* <Route path="/Checkout" element={<Checkout />} /> */}
       </Routes>
     </BrowserRouter>
