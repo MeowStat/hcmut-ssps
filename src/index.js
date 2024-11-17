@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./css/UploadFile.css";
 import "./css/ChoosePrinter.css";
 import "./css/Checkout.css";
+// import "./css/index.css"
 import ChoosePrinter from "./js/ChoosePrinter";
 import Homepage from './js/homepage';
 import reportWebVitals from "./js/reportWebVitals";
@@ -22,7 +23,7 @@ root.render(
   <React.StrictMode>
     <BrowserRouter>
       <Routes>
-      <Route path="/" element={<Homepage />} />
+      <Route path="/" element={<SPSOApp/>} />
         {/* <Route path="/welcome" element={<Welcome />} />
         <Route path="/UploadFile" element={<App />} />
         <Route path="/Login" element={<Login />} />

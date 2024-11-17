@@ -5,13 +5,12 @@ import Footer from "./js/Footer";
 
 const SPSOApp = () => {
     return (
-        <div className="App">
-      <Navbar />
-      <div className="content-wrap">
-        <SPSOApp/>
-      </div>
-      <Footer />
-    </div>
+        <>
+            <Navbar/>
+            <SPSOMenu/>
+            <Footer/>
+        </>
+        
     )
 }
 
