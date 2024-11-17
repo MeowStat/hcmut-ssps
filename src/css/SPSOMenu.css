@@ -1,0 +1,86 @@
+.spso-menu {
+    padding: 0;
+    box-sizing: border-box;
+    display: flex;
+    width: 13%;
+    min-width: 150px;
+    min-height: 80vh;
+    background-color: #333;
+    color: white;
+    font-weight: 600;
+    font-size: 1.2rem;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    text-align: center;
+    flex: 1;
+}
+
+button {
+    border: none;
+    cursor: pointer;
+    margin: 0;
+    padding: 12px 4px;
+}
+
+.menu-title {
+    display: flex;
+    align-items: center;
+    margin-bottom: 28px;
+    gap: 8px;
+}
+
+#menu-btn {
+    background-color: #333;
+    cursor: pointer;
+    border-radius: 5px;
+    box-sizing: border-box;
+    padding: 5px;
+}
+
+#menu-btn:hover {
+    border: 1px solid gray;
+}
+
+#menu-btn-icon {
+    width: 35px;
+    height: auto;
+}
+
+.spso-menu-tab-container {
+    display: flex;
+    flex-direction: column;
+    min-width: 100%;
+    /* flex: 1; */
+}
+
+.spso-menu .spso-menu-tab-container button {
+    display: flex;
+    min-width: 100%;
+    align-self: stretch;
+    align-items: center;
+    gap: 8px;
+    background-color: #333;
+    color: #EEE;
+    flex: 1;
+    border-top: gray 1px solid;
+    padding: 12px 8px;
+    text-align: start;
+    flex-grow: 1;
+}
+
+.spso-menu .spso-menu-tab-container button:hover {
+    background-color: #45464c;
+}
+
+.spso-menu .spso-menu-tab-container button:focus {
+    background-color: #2C3B42;
+    color: #fff;
+    font-weight: 600;
+    border-top: #fff 0.5px solid;
+    border-bottom: #fff 0.5px solid;
+}
+
+.spso-menu .spso-menu-tab-container button:last-child {
+    border-bottom: #AAA 0.2px solid;
+}
