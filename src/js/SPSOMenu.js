@@ -7,6 +7,7 @@ import log_icon from "../assets/img/calendar_view_month.svg"
 import stat_icon from "../assets/img/bar_chart.svg"
 import manual_icon from "../assets/img/developer_guide.svg"
 import { useNavigate } from "react-router-dom";
+import { useState } from "react"
 
 
 const tabs = [
@@ -43,20 +44,26 @@ const tabs = [
 ]
 
 const SPSOMenu = () => {
+    const [isShrunk,setIsShrunk] = useState(false)
+
+    const toggleMenu = () => {
+        setIsShrunk(!isShrunk)
+    }
+
     return (
-        <div className="spso-menu">
+        <div className={`spso-menu ${isShrunk? "shrink" : ""}`}>
             <div className="menu-title">
-                <button id="menu-btn">
+                <button id="menu-btn" onClick={toggleMenu}>
                     <img id= "menu-btn-icon" src={menuIcon}/>
                 </button>
-                Menu
+                {isShrunk ? "" : "Menu"}
             </div>
             <div className="spso-menu-tab-container">
             {tabs.map((tab) => (
                     
                     <button key={tab.id} className="tabs" id={tab.id}>
                         <img id={tab.label} src={tab.icon} alt={`${tab.label} Icon`} />
-                        {tab.label}
+                        {isShrunk ? "" : tab.label}
                     </button>
                     
                 ))}

@@ -2,9 +2,8 @@
     padding: 0;
     box-sizing: border-box;
     display: flex;
-    width: 13%;
-    min-width: 150px;
-    min-height: 80vh;
+    width: 200px;
+    min-height: 90vh;
     background-color: #333;
     color: white;
     font-weight: 600;
@@ -14,7 +13,13 @@
     align-items: flex-start;
     text-align: center;
     flex: 1;
+    transition: width 0.5s ease; /* Smooth shrinking */
+    overflow: hidden;
 }
+
+.spso-menu.shrink {
+    width: 45px; /* Shrunk width */
+  }
 
 button {
     border: none;
@@ -38,12 +43,8 @@ button {
     padding: 5px;
 }
 
-#menu-btn:hover {
-    border: 1px solid gray;
-}
-
 #menu-btn-icon {
-    width: 35px;
+    width: 30px;
     height: auto;
 }
 
@@ -51,7 +52,6 @@ button {
     display: flex;
     flex-direction: column;
     min-width: 100%;
-    /* flex: 1; */
 }
 
 .spso-menu .spso-menu-tab-container button {
@@ -67,6 +67,9 @@ button {
     padding: 12px 8px;
     text-align: start;
     flex-grow: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .spso-menu .spso-menu-tab-container button:hover {
