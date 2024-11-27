@@ -21,7 +21,7 @@ const tabs = [
     id: "printer_tab",
     label: "Printer Management",
     icon: printer_management_icon,
-    path: "/config",
+    path: "/printer",
   },
   {
     id: "config_tab",

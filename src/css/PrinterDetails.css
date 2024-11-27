@@ -1,0 +1,130 @@
+/* Container styles */
+.main-content {
+    flex: 1;
+    display: flex;
+    font-family: 'Roboto', sans-serif;
+  }
+  .content {
+    flex: 1; /* Phần nội dung co giãn để lấp đầy không gian */
+    padding: 20px;
+    overflow-y: auto;
+    background-color: #f9f9f9; /* Màu nền nhẹ */
+    font-family: 'Roboto', sans-serif;
+  }
+  .title {
+    font-family: 'Roboto', sans-serif;
+    margin-left: 60px;
+    color: #000;
+    font-size: 30px;
+  }
+  
+.printer-details-container {
+  width: 1069px;
+  margin: 24px 62px 596.1px 63px;
+  border-radius: 10px;
+  border: solid 1px #aaa;
+  background-color: #fefefe;
+  font-family: 'Roboto', sans-serif;
+  }
+  
+  .printer-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 40px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    color: #000;
+    margin-left: 70px;
+  }
+  
+  
+  .modify-btn {
+    margin-top: 41px;
+    margin-bottom: 26px;
+    margin-left: 915px;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+    width: 133px;
+    height: 41px;
+    margin-right: 915px;
+    font-weight: bold;
+    border-radius: 5px;
+    border: solid 0.5px #d9d9d9;
+    background-color: #0057ff;
+  }
+  
+  .modify-btn:hover {
+    background-color: #357ab7;
+  }
+  
+  .printer-info {
+    font-family: 'Roboto', sans-serif;
+    width: 850px;
+    padding: 38px;
+    margin-left: 70px;
+    margin-right: 69px;
+    margin-bottom: 33px;
+    margin-top: 33px;
+    border-radius: 10px;
+    border: solid 1px #aaa;
+    background-color: #fff;
+  }
+  
+  .printer-info h3 {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  .printer-main-info {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .printer-main-info div {
+    margin-bottom: 10px;
+  }
+  .center-button {
+    display: flex;
+    flex-direction: column; /* Chuyển sang hiển thị theo cột */
+    align-items: center; /* Căn giữa các nút theo chiều ngang */
+    gap: 20px; /* Khoảng cách giữa các nút */
+  }
+  
+  .disable-printer-btn, .delete-printer-btn {
+   
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 133px;
+  height: 41px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+  }
+  
+  .disable-printer-btn {
+    border: solid 0.5px #f00;
+  background-color: #fff;
+    color: #f00;
+    
+  }
+  
+  .disable-printer-btn:hover {
+    background-color: #aaa;
+  }
+  
+  .delete-printer-btn {
+    color: white;
+    border: none;
+  background-color: #f00;
+  margin-bottom: 40px;
+  }
+  
+  .delete-printer-btn:hover {
+    background-color: #e53935;
+  }
+  

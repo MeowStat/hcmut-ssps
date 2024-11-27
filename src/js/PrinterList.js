@@ -1,33 +1,26 @@
 import React from 'react';
+import { useNavigate } from "react-router-dom";
 import PrinterItem from './PrinterItem';
 import '../css/PrinterList.css';
 
 const PrinterList = () => {
+  const navigate = useNavigate();
   const printers = [
-    { name: 'H6-1', status: 'Active', remain: 200 },
-    { name: 'H6-2', status: 'Active', remain: 200 },
-    { name: 'H6-3', status: 'Offline', remain: 10 },
-    { name: 'H3-1', status: 'Active', remain: 200 },
-    { name: 'H6-2', status: 'Active', remain: 200 },
-    { name: 'H6-3', status: 'Offline', remain: 10 },
-    { name: 'H3-1', status: 'Active', remain: 200 },
-    { name: 'H6-2', status: 'Active', remain: 200 },
-    { name: 'H6-3', status: 'Offline', remain: 10 },
-    { name: 'H3-1', status: 'Active', remain: 200 },
-    { name: 'H6-2', status: 'Active', remain: 200 },
-    { name: 'H6-3', status: 'Offline', remain: 10 },
-    { name: 'H3-1', status: 'Active', remain: 200 },
-    { name: 'H6-2', status: 'Active', remain: 200 },
-    { name: 'H6-3', status: 'Offline', remain: 10 },
-    { name: 'H3-1', status: 'Active', remain: 200 },
+    { id: "H6-1", name: "H6-1", remain: 200, status: "Active" },
+    { id: "H6-2", name: "H6-2", remain: 200, status: "Active" },
+    { id: "H6-3", name: "H6-3", remain: 10, status: "Offline" },
+    { id: "H3-1", name: "H3-1", remain: 200, status: "Active" },
   ];
-
+  const handleCardClick = (id) => {
+    navigate(`/printer/${id}`); // Chuyển hướng tới trang chi tiết
+  };
   return (
 
     <div className="printer-list">
-      {printers.map((printer, index) => (
+      {printers.map((printer) => (
         <PrinterItem
-          key={index}
+          key={printer.id}
+          onClick={() => handleCardClick(printer.id)}
           name={printer.name}
           status={printer.status}
           remain={printer.remain}
