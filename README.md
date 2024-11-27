@@ -68,3 +68,21 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+## Changelog
+
+### Update 27/11
+* Add new:
+- node_module/find-root
+- @nivo/line for graph
+- SPSOApp.css for flexing row
+- Components/ - Header text and StatBox function. 
+- Components/BarChart to draw graph.
+- Dashboard/ for index page
+
+* Update:
+- src/index.js use path * to subroute
+- Add "path" in tabs json and use Link to covered button in SPSOMenu.js
+- Use route in SPSOApp.js
+
