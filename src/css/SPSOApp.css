@@ -1,0 +1,19 @@
+/**
+* SPSOApp.css
+* Flex content by row
+*/
+
+.app,
+.content {
+  height: 100%;
+  width: 100%;
+}
+
+.app {
+    display: flex;
+    position: relative;
+}
+
+.app-menu {
+  background-color: #333333;
+}

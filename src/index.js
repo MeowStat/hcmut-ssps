@@ -23,7 +23,8 @@ root.render(
   <React.StrictMode>
     <BrowserRouter>
       <Routes>
-      <Route path="/" element={<SPSOApp/>} />
+      {/* <SPSOApp/> */}
+      <Route path="*" element={<SPSOApp/>} />
         {/* <Route path="/welcome" element={<Welcome />} />
         <Route path="/UploadFile" element={<App />} />
         <Route path="/Login" element={<Login />} />
