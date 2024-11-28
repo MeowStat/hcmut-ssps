@@ -73,18 +73,12 @@
     background-color: #fff;
   }
   
-  .printer-info h3 {
-    font-size: 22px;
-    font-weight: 600;
-    margin-bottom: 20px;
-    font-family: 'Roboto', sans-serif;
-  }
-  
   .printer-main-info {
     display: flex;
     flex-direction: column;
+    font-size: 14px;
+    text-align: left;
   }
-  
   .printer-main-info div {
     margin-bottom: 10px;
   }

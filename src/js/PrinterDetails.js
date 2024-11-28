@@ -1,18 +1,12 @@
 import React from "react";
 import { useParams } from "react-router-dom";
+import printerData from '../db/printer';
 import '../css/PrinterDetails.css';
 
 const PrinterDetails = () => {
   const { id } = useParams(); // Lấy ID máy in từ URL
 
-  const printerDetails = {
-    "H6-1": { name: "H6-1", type: "HP LaserJet Pro", status: "Active", location: "Building H6, Floor 1" },
-    "H6-2": { name: "H6-2", type: "HP LaserJet Pro", status: "Active", location: "Building H6, Floor 2" },
-    "H6-3": { name: "H6-3", type: "HP LaserJet Pro", status: "Offline", location: "Building H6, Floor 3" },
-    "H3-1": { name: "H3-1", type: "HP LaserJet Pro", status: "Active", location: "Building H3, Floor 1" },
-  };
-  const printer = printerDetails[id];
-
+  const printer = printerData.find((printer) => printer.id === id);
   if (!printer) {
     return <div>Printer not found!</div>;
   }
@@ -23,15 +17,35 @@ const PrinterDetails = () => {
     <div className="printer-details-container">
     <button className="modify-btn">Modify</button>
       <header className="printer-header">
-      Printer H1-3
+      Printer {printer.name}
       </header>
 
       <div className="printer-info">
         <div className="printer-main-info">
-        <h1>{printer.name} - Details</h1>
-      <p>Type: {printer.type}</p>
-      <p>Status: {printer.status}</p>
-      <p>Location: {printer.location}</p>
+              <p>ID: {printer.id}</p>
+              <p>Name: {printer.name}</p>
+              <p>Type: {printer.type}</p>
+              <p>Status: {printer.status}</p>
+              <p>
+                Location: {printer.location.building}, Floor{" "}
+                {printer.location.floor}
+              </p>
+              <p>
+                Paper Tray Status: {printer.paperTrayStatus.remainingPages}{" "}
+                {printer.paperTrayStatus.paperSize} pages remaining
+              </p>
+              <p>
+                Error Alerts:{" "}
+                {printer.errorAlerts ? printer.errorAlerts : "None"}
+              </p>
+              <p>
+                Description:{" "}
+                {printer.description
+                  ? printer.description
+                  : "No description available"}
+              </p>
+              <p>IPv4 Address: {printer.network.ipv4Address}</p>
+              <p>Connection Speed: {printer.network.connectionSpeed}</p>
         </div>
         
       </div>
