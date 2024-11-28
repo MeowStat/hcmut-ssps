@@ -61,9 +61,14 @@
   }
   
   .printer-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     font-family: 'Roboto', sans-serif;
     width: 850px;
     padding: 38px;
+    padding-right: 80px;
+    box-sizing: border-box;
     margin-left: 70px;
     margin-right: 69px;
     margin-bottom: 33px;
@@ -122,3 +127,49 @@
     background-color: #e53935;
   }
   
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  table td, table th {
+    padding: 4px 12px;
+    text-align: left;
+    border: none;
+  }
+  
+
+  table th {
+    background-color: #fff;
+    font-weight: 500;
+  }
+  
+  td {
+    color: #666;
+  }
+
+  tr {
+    background-color: #fff;
+  }
+
+  #printer-name, #printer-status {
+    font-weight: bold;
+  }
+
+  .Active {
+    color: green;
+  }
+
+  .Offline, .error-text {
+    color: red;
+  }
+
+  #paper-remain {
+    color: #0057ff;
+    font-weight: 500;
+  }
+
+  #printer-img {
+    height: 200px;
+    width: auto;
+  }
