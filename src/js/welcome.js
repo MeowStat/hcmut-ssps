@@ -1,4 +1,7 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'; // Change this import
+import Navbar from './Navbar'; // Add this import 
+import Footer from './Footer'; // Add this import 
 
 const Card = ({ children, style }) => (
     <div style={{ ...style, padding: '24px', border: '1px solid #e5e7eb', borderRadius: '8px', backgroundColor: 'white' }}>
@@ -32,6 +35,8 @@ const TableCell = ({ children }) => (
 
 export default function Component() {
     return (
+    <>
+        <Navbar/>
         <div style={{ padding: '24px', maxWidth: '1200px', margin: '0 auto' }}>
             {/* Header */}
             <div style={{ marginBottom: '32px' }}>
@@ -256,5 +261,7 @@ export default function Component() {
                 </Card>
             </div>
         </div>
+        <Footer/>
+    </>
     )
 }

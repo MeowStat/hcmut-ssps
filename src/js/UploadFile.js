@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom"; // Thêm import này
 import "../css/UploadFile.css";
+import Navbar from './Navbar'; // Add this import 
+import Footer from "./Footer";
 
 const UploadFile = () => {
   const navigate = useNavigate(); // Thêm hook useNavigate
@@ -41,6 +43,8 @@ const UploadFile = () => {
     navigate('/ChoosePrinter'); // Điều hướng đến trang ChoosePrinter
   };
   return (
+    <>
+    <Navbar/>
     <div className="upload-container">
       <h2 className="upload-header">
         <h2
@@ -110,7 +114,7 @@ const UploadFile = () => {
             border: "none",
             borderTop: "2px dashed #000000",
             width: "100%", // Làm cho đường kẻ dài hơn
-            marginLeft: "10%", // Để căn chỉnh lại cho cân đối
+            marginLeft: "0%", // Để căn chỉnh lại cho cân đối
             height: "0.5px",
           }}
         />
@@ -200,6 +204,8 @@ const UploadFile = () => {
         </button>
       </div>
     </div>
+    <Footer/>
+  </>
   );
 };
 

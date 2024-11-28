@@ -1,10 +1,9 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../css/BuyPage.css";
-import HeaderPage from "./HeaderPage";
-import ContactInfo from "./ContactInfo";
-
-function BuyPages() {
+import Navbar from './Navbar'; // Add this import 
+import Footer from "./Footer";
+export default function BuyPages() {
   const navigate = useNavigate();
   const [a4Count, setA4Count] = useState(0);
   const [a3Count, setA3Count] = useState(0);
@@ -25,8 +24,9 @@ function BuyPages() {
   };
 
   return (
+    <>
+      <Navbar/>
     <div className="buy-pages">
-      <HeaderPage />
       <h1>Buy Pages</h1>
       <hr
         style={{
@@ -64,11 +64,11 @@ function BuyPages() {
           </button>
         </div>
       </div>
-
-      <button onClick={() => navigate("/Cart")}>Go to Cart</button>
-      <ContactInfo />
+      <div className="go-to-cart">
+        <button onClick={() => navigate("/Cart")}>Go to Cart</button>
+      </div>
     </div>
+    <Footer/>
+  </>
   );
 }
-
-export default BuyPages;

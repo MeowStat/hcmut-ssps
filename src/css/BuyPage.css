@@ -60,8 +60,9 @@
   width: 100%;
 }
 
-.go-to-cart {
+.go-to-cart button {
   display: block;
+  max-width: 1000px;
   margin: 20px auto;
   background: #0066ff;
   color: white;

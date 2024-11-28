@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../css/Cart.css";
-import ContactInfo from "./ContactInfo";
-import HeaderPage from "./HeaderPage";
+import Navbar from './Navbar'; // Add this import 
+import Footer from "./Footer";
+
 function Cart() {
   const navigate = useNavigate();
   const [cartItems, setCartItems] = useState([
@@ -45,15 +46,15 @@ function Cart() {
   };
   const handleCheckout = () => {
     // Xử lý checkout ở đây
-    navigate("/CheckOutCart");
+    navigate("/CheckoutCart");
   };
   const handleBack = () => {
-    navigate("/");
+    navigate("/BuyPages");
   };
 
   return (
     <div className="cart-container">
-      <HeaderPage />
+      <Navbar />
       <h1 className="cart-header">Shopping Cart</h1>
       <table className="cart-table">
         <thead>
@@ -131,7 +132,7 @@ function Cart() {
           Check Out Now
         </button>
       </div>
-      <ContactInfo />
+      <Footer/>
     </div>
   );
 }

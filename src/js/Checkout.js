@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "../css/Checkout.css";
+import Navbar from './Navbar'; // Add this import 
+import Footer from "./Footer";
 
 const Checkout = () => {
   const navigate = useNavigate(); // Thêm hook useNavigate
@@ -40,14 +42,28 @@ const Checkout = () => {
   ]);
   // Tính tổng số trang
   const totalPages = files.reduce((sum, file) => sum + file.pages, 0);
+  
+  const [showQR, setShowQR] = useState(false);
+
+  // Sửa lại hàm handleNext
+  const handleNext = () => {
+    setShowQR(true);
+  };
+
+  const handleCloseQR = () => {
+    setShowQR(false);
+  };
+
   const handleBack = () => {
     navigate("/ChoosePrinter"); // Điều hướng đến trang ChoosePrinter
   };
+
   // const handleNext = () => {
   //   navigate('/Checkout'); // Điều hướng đến trang Checkout
   // };
   return (
     <div className="checkout-container">
+      <Navbar/>
       <div className="header">
         <h1>Check Out</h1>
         <div className="timer">
@@ -133,10 +149,26 @@ const Checkout = () => {
           height: "0.1px",
         }}
       />
-      <div className="button-group">
-        <button onClick={handleBack}>Back</button>
-        {/* <button onClick={handleNext}>Checkout</button> */}
+      <div className="buttons">
+          <button className="back-button" onClick={handleBack}>Back</button>
+          <button className="next-button" onClick={handleNext}>Checkout</button>
       </div>
+
+      {showQR && (
+        <div className="qr-modal">
+          <div className="qr-modal-content">
+            <h2>Scan QR Code to Pay</h2>
+            <img 
+              src="qrcode.jpg" 
+              alt="QR Code" 
+              className="qr-code"
+            />
+            <button onClick={handleCloseQR}>Close</button>
+          </div>
+        </div>
+      )}
+
+      <Footer/>
     </div>
   );
 };

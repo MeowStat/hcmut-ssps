@@ -2,6 +2,8 @@ import React from 'react';
 import { Clock, Lock, Banknote } from 'lucide-react';
 import { useNavigate } from 'react-router-dom'; // Change this import
 import '../css/homepage.css';
+import Navbar from './Navbar'; // Add this import 
+import Footer from './Footer'; // Add this import 
 
 export default function PrintingService() {
   const navigate = useNavigate(); // Use navigate instead of router
@@ -11,6 +13,8 @@ export default function PrintingService() {
     navigate('/welcome');
   };
   return (
+    <>
+    <Navbar />
     <div className="page-container">
       {/* Hero Section */}
       <section className="hero-section container">
@@ -99,5 +103,7 @@ export default function PrintingService() {
         </div>
       </div>
     </div>
+    <Footer/>
+    </>
   );
 }
