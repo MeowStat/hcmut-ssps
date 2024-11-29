@@ -87,14 +87,14 @@ export default function PrintingService() {
           <div className="logo-container">
             <div className="logo-wrapper">
               <img
-                src="/path-to-bk-logo.png"
+                src="LogoBK.jpg"
                 alt="BK Logo"
                 className="logo"
               />
             </div>
             <div className="logo-wrapper">
               <img
-                src="/path-to-hp-logo.png"
+                src="hpLogo.png"
                 alt="HP Logo"
                 className="logo"
               />

@@ -62,8 +62,11 @@ const Checkout = () => {
   //   navigate('/Checkout'); // Điều hướng đến trang Checkout
   // };
   return (
+    <>
+    <Navbar/>
+    
     <div className="checkout-container">
-      <Navbar/>
+      
       <div className="header">
         <h1>Check Out</h1>
         <div className="timer">
@@ -167,9 +170,9 @@ const Checkout = () => {
           </div>
         </div>
       )}
-
-      <Footer/>
     </div>
+    <Footer/>
+    </>
   );
 };
 

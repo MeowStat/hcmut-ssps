@@ -32,8 +32,8 @@ export default function BuyPages() {
         style={{
           border: "none",
           borderTop: "1px dashed #000000",
-          width: "80%", // Làm cho đường kẻ dài hơn
-          marginLeft: "10%", // Để căn chỉnh lại cho cân đối
+          width: "100%", // Làm cho đường kẻ dài hơn
+          marginLeft: "0%", // Để căn chỉnh lại cho cân đối
           height: "0.1px",
         }}
       />

@@ -61,8 +61,11 @@ const ChoosePrinter = () => {
     navigate('/Checkout'); // Điều hướng đến trang Checkout
   };
   return (
+    <>
+    <Navbar/>
+    
     <div className="choose-printer-container">
-      <Navbar/>
+      
       <div className="header">
         <h2>Choose Printer</h2>
         <div className="timer">
@@ -124,8 +127,10 @@ const ChoosePrinter = () => {
         <button className="back-button" onClick={handleBack}>Back</button>
         <button className="next-button" onClick={handleNext}>Next</button>
       </div>
-      <Footer/>
+      
     </div>
+    <Footer/>
+    </>
   );
 };
 
