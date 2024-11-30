@@ -1,8 +1,9 @@
-
 import SPSOMenu from "./js/SPSOMenu";
 import Navbar from "./js/Navbar";
 import Footer from "./js/Footer";
 import Dashboard from "./SPSOApp/dashboard";
+import Config from "./SPSOApp/configuration";
+import FileConfig from "./SPSOApp/configuration/FileConfig";
 import ManagePrinter from "./js/ManagePrinter";
 import PrinterDetails from "./js/PrinterDetails";
 import { Route, Routes } from "react-router-dom";
@@ -13,13 +14,15 @@ const SPSOApp = () => {
         <>
         <Navbar/>
         <div className="app">
-            <div class="app-menu">
+            <div className="app-menu">
                 <SPSOMenu/>
             </div>
             <main className="content">
                 <Routes>
                     <Route index element={<Dashboard />} />
                     <Route path="/dashboard" element={<Dashboard />} />
+                    <Route path="/config" element={<Config />} />
+                    <Route path="/config/fileconfig" element={<FileConfig />} />
                     <Route path="/printer" element={<ManagePrinter/>} />
                     <Route path="/printer/:id" element={<PrinterDetails />} />
                     <Route path="/" element={<p>Path not found</p>} />

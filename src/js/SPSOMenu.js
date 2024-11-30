@@ -27,6 +27,7 @@ const tabs = [
     id: "config_tab",
     label: "Configuration",
     icon: config_icon,
+    path: "/config",
   },
   {
     id: "log_tab",

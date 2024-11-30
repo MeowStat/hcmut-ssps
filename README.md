@@ -86,3 +86,18 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 - Add "path" in tabs json and use Link to covered button in SPSOMenu.js
 - Use route in SPSOApp.js
 
+### Update 1/12
+* Add new:
+@tanstack/react-table@8.20.5
+Add dependencies tailwindcss-animate class-variance-authority clsx tailwind-merge lucide-react
+tsconfig.json
+global.css
+components.json to pack and lib/utils.ts for cn helper.
+configuration index page with FileConfig support by Bootstrap
+Components/columns.tsx|DataTable.tsx|Table.tsx with TypeScript for read data and display Data table in Dashboard
+New 4 file .svg to icon
+
+
+* Update:
+Config tailwind.config.js
+Data Table in Dashboard listen change in data/RecentPrint.tsx

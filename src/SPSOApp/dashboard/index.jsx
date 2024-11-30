@@ -3,6 +3,9 @@ import Header from "../../components/header";
 import StatBox from "../../components/StatBox";
 import LineChart from "../../components/LineChart";
 import contex from "../../assets/img/contextual_token.svg";
+import { RecentPrint, columns } from "../../components/columns";
+import { DataTable } from "../../components/DataTable";
+import { logs } from "../../data/RecentPrint";
 
 const Dashboard = () => {
   return (
@@ -84,45 +87,115 @@ const Dashboard = () => {
           gap="4%"
           mr="25%"
         >
-            <Box
-                mt="25px"
-                p="0 30px"
-                display="flex"
-                justifyContent="space-between"
-                flexDirection="row"
-                borderRadius="10px"
-                overflow="hidden"
-                sx={{
-                  boxShadow: "0px 0px 4px rgba(0, 0, 0, 0.25)",
-                }}
-            >
-                <Box style={{flex: 1}}>
-                    <Typography variant="h6" fontSize="18px" fontWeight="600" color="#000000" marginTop="5%"> 
-                        Sales
-                    </Typography>
-                    <LineChart />
-                </Box>
+          <Box
+            mt="25px"
+            p="0 30px"
+            display="flex"
+            justifyContent="space-between"
+            flexDirection="row"
+            borderRadius="10px"
+            overflow="hidden"
+            sx={{
+              boxShadow: "0px 0px 4px rgba(0, 0, 0, 0.25)",
+            }}
+          >
+            <Box style={{ flex: 1 }}>
+              <Typography
+                variant="h6"
+                fontSize="18px"
+                fontWeight="600"
+                color="#000000"
+                marginTop="5%"
+              >
+                Sales
+              </Typography>
+              <LineChart />
             </Box>
+          </Box>
 
-            <Box
-                mt="25px"
-                p="0 30px"
-                display="flex"
-                justifyContent="space-between"
-                flexDirection="row"
-                borderRadius="10px"
-                overflow="hidden"
-                sx={{
-                  boxShadow: "0px 0px 4px rgba(0, 0, 0, 0.25)",
-                }}
-            >
-                <Box style={{flex: 1}}>
-                    <Typography variant="h6" fontSize="18px" fontWeight="600" color="#000000" marginTop="5%"> 
-                        My Access
-                    </Typography>
-                    <LineChart />
-                </Box>
+          <Box
+            mt="25px"
+            p="0 30px"
+            display="flex"
+            justifyContent="space-between"
+            flexDirection="row"
+            borderRadius="10px"
+            overflow="hidden"
+            sx={{
+              boxShadow: "0px 0px 4px rgba(0, 0, 0, 0.25)",
+            }}
+          >
+            <Box style={{ flex: 1 }}>
+              <Typography
+                variant="h6"
+                fontSize="18px"
+                fontWeight="600"
+                color="#000000"
+                marginTop="5%"
+              >
+                My Access
+              </Typography>
+              <LineChart />
             </Box>
+          </Box>
+        </Box>
+      </Box>
+      <Box
+        gridColumn="span 3"
+        display="grid"
+        gridTemplateColumns="repeat(1, 1fr)"
+        gap="4%"
+        mr="61%"
+      >
+        <Box
+          mt="40px"
+          display="flex"
+          justifyContent="space-between"
+          flexDirection="row"
+          borderRadius="10px"
+          overflow="hidden"
+          sx={{
+            boxShadow: "0px 0px 4px rgba(0, 0, 0, 0.25)",
+          }}
+        >
+          <Box style={{ flex: 1 }} margin="6%">
+            <Box style={{ display: "flex", justifyContent: "space-between" }}>
+              <Typography
+                variant="h6"
+                fontSize="18px"
+                fontWeight="600"
+                color="#000000"
+                marginTop="0%"
+              >
+                Recent Prints Request
+              </Typography>
+              <Box margin="0%"
+              p="7px 20px"
+              fontSize="12px"
+                fontWeight="600"
+                color="#888888"
+              borderRadius="2px"
+              overflow="hidden"
+              textAlign="center"
+              sx={{
+                boxShadow: "0px 0px 2px rgba(0, 0, 0, 0.25)",
+                "&:hover": {
+                  backgroundColor: "#DDDDDD",
+                  cursor: "pointer",
+                },
+              }}>View All &gt;</Box>
+            </Box>
+            <Typography
+              variant="h6"
+              fontSize="18px"
+              fontWeight="600"
+              color="#000000"
+              marginTop="5%"
+            >
+              {/*That empty row to margin bottom, chill for that */}
+            </Typography>
+            <DataTable columns={columns} data={logs} />
+          </Box>
         </Box>
       </Box>
     </Box>
