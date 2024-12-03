@@ -6,8 +6,9 @@ import Footer from "./Footer";
 
 const UploadFile = () => {
   const navigate = useNavigate(); // Thêm hook useNavigate
-
   const [files, setFiles] = useState([]);
+  const [totalPages, setTotalPages] = useState(0);
+  const [isSeparated, setIsSeparated] = useState(false);
   const [printConfig, setPrintConfig] = useState({
     copies: 1,
     orientation: "Auto",
@@ -15,30 +16,75 @@ const UploadFile = () => {
     pageSize: "A4",
   });
 
+  const getFileIcon = (fileName) => {
+    const extension = fileName.split('.').pop().toLowerCase();
+    switch (extension) {
+      case 'pdf': return '/pdf_icon.png';
+      case 'doc':
+      case 'docx': return 'docx_icon.png';
+      case 'txt': return 'txt_icon.png';
+      default: return null;
+    }
+  };
+
+  // Ước tính số trang dựa trên kích thước file
+  const estimatePages = (file) => {
+    const extension = file.name.split('.').pop().toLowerCase();
+    // Giả định trung bình mỗi trang
+    const bytesPerPage = {
+      'pdf': 3500,
+      'doc': 3000,
+      'docx': 3000,
+      'txt': 2000
+    };
+    
+    const avgBytesPerPage = bytesPerPage[extension] || 3000;
+    return Math.max(1, Math.ceil(file.size / avgBytesPerPage));
+  };
+
   const handleDrop = (e) => {
     e.preventDefault();
     const droppedFiles = Array.from(e.dataTransfer.files);
-    setFiles([
-      ...files,
-      ...droppedFiles.map((file) => ({
+    
+    const newFiles = droppedFiles.map(file => {
+      const pages = estimatePages(file);
+      return {
         name: file.name,
         size: file.size,
-        status: "uploading",
-      })),
-    ]);
+        status: "uploaded",
+        pages: pages,
+        icon: getFileIcon(file.name)
+      };
+    });
+
+    setFiles(prev => [...prev, ...newFiles]);
+    setTotalPages(prev => prev + newFiles.reduce((sum, file) => sum + file.pages, 0));
   };
 
   const handleBrowse = (e) => {
     const selectedFiles = Array.from(e.target.files);
-    setFiles([
-      ...files,
-      ...selectedFiles.map((file) => ({
+    
+    const newFiles = selectedFiles.map(file => {
+      const pages = estimatePages(file);
+      return {
         name: file.name,
         size: file.size,
-        status: "uploading",
-      })),
-    ]);
+        status: "uploaded",
+        pages: pages,
+        icon: getFileIcon(file.name)
+      };
+    });
+
+    setFiles(prev => [...prev, ...newFiles]);
+    setTotalPages(prev => prev + newFiles.reduce((sum, file) => sum + file.pages, 0));
   };
+
+  const removeFile = (index) => {
+    const removedFile = files[index];
+    setTotalPages(prev => prev - removedFile.pages);
+    setFiles(files.filter((_, i) => i !== index));
+  };
+
   const handleNext = () => {
     navigate('/ChoosePrinter'); // Điều hướng đến trang ChoosePrinter
   };
@@ -95,26 +141,49 @@ const UploadFile = () => {
           </div>
         </div>
         <div className="file-list">
-          {files.map((file, index) => (
-            <div key={index} className="file-item">
-              <div className="file-info">
-                <div className="file-name">{file.name}</div>
-                <div className="file-size">
-                  {(file.size / 1024).toFixed(1)} KB
-                </div>
-              </div>
-              <div className="file-status">{file.status}</div>
+      {files.map((file, index) => (
+        <div key={index} className="file-item">
+          {file.icon && <img src={file.icon} alt="" className="file-type-icon" />}
+          <div className="file-info">
+            <div className="file-name">{file.name}</div>
+            <div className="file-size">
+              {(file.size / 1024).toFixed(1)} KB - {file.pages} pages
             </div>
-          ))}
+          </div>
+          <div className="file-status">{file.status}</div>
+          <button 
+            className="remove-file-btn"
+            onClick={() => removeFile(index)}
+          >
+            ×
+          </button>
         </div>
+      ))}
+      {files.length > 0 && (
+        <div className="totalAndPrint">
+          <div className="separated-files">
+            <input
+              type="checkbox"
+              id="separatedFiles"
+              checked={isSeparated}
+              onChange={(e) => setIsSeparated(e.target.checked)}
+            />
+            <label htmlFor="separatedFiles">Printing separated files</label>
+          </div>
+          <div className="total-pages">
+            Total: {totalPages} pages
+          </div>
+        </div>
+      )}
+    </div>
       </div>
       <div className="config-section">
-        <hr
+        <h2
           style={{
             border: "none",
             borderTop: "2px dashed #000000",
             width: "100%", // Làm cho đường kẻ dài hơn
-            marginLeft: "0%", // Để căn chỉnh lại cho cân đối
+            marginLeft: "-1.7%", // Để căn chỉnh lại cho cân đối
             height: "0.5px",
           }}
         />
