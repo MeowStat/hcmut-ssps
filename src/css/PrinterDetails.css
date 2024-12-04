@@ -173,3 +173,191 @@
     height: 200px;
     width: auto;
   }
+
+  /* Lớp phủ (Overlay) */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Nền mờ */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Container chính của modal */
+.modal {
+  width: 1009px;
+  height: 661px;
+  border-radius: 30px;
+  background: white;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  position: relative;
+  font-family: 'Roboto', sans-serif;
+  animation: fadeIn 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column; /* Các thành phần xếp theo cột */
+  align-items: center; /* Căn giữa theo chiều ngang */
+  text-align: center; /* Căn giữa văn bản */
+}
+.cancel-icon{
+  margin-top: 35px;
+}
+/* Nút đóng (Cancel) */
+.modal-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 16px;
+  font-weight: 600;
+  color: #666;
+  cursor: pointer;
+  transition: color 0.2s;
+  margin-right: 27px;
+}
+
+.modal-close:hover {
+  color: #000;
+}
+
+/* Tiêu đề chính */
+.modal h2 {
+  font-size: 25px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #000;
+  text-align: center;
+}
+
+/* Nội dung mô tả */
+.text1 {
+  color: #555;
+  line-height: 1.5;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  font-size: 16px;
+  font-weight: 300;
+  font-style: italic;
+}
+
+/* Khu vực hiển thị thông tin máy in */
+.modal-info {
+  display: grid;
+  grid-template-columns: auto 1fr; 
+  row-gap: 3px; /* Khoảng cách giữa các hàng */
+  column-gap: 30px;
+  align-items: center; /* Canh giữa theo chiều dọc */
+  justify-content: center; /* Canh giữa theo chiều ngang */
+  background-color: #fffeee;
+  border-radius: 10px;
+  width: 393px;
+  height: 83px;
+  margin-top: 25px;
+  border: 2px dashed #333; /* Viền nét đứt */
+}
+.modal-row {
+  display: contents; /* Hiển thị như các ô trong grid */
+
+}
+
+.modal-row strong {
+  text-align: left; /* Canh trái cho cột đầu */
+  margin-left: 99px;
+}
+
+.modal-row span {
+  text-align: left; /* Canh trái cho cột thứ hai */
+}
+.modal-info strong {
+  color: #333;
+  font-size: 14px;
+}
+
+/* Thông báo cảnh báo */
+.warning {
+  flex-direction: column;
+  text-align: left;
+  display: flex;
+  align-items: center; /* Canh giữa theo chiều dọc */
+  justify-content: center; /* Canh giữa theo chiều ngang */
+  width: 499px;
+  height: 97px;
+  background: #ffe7da;
+  color: #ff0000;
+  margin-top: 31px;
+  margin-bottom: 29px;
+  border-left: solid 5px #f00;
+  border-radius: 5px;
+  font-size: 14px;
+}
+.horizontal-line {
+  width: 100%; /* Chiều rộng của đường kẻ */
+  border-top: 1px solid #aaa; /* Màu sắc và độ dày của đường kẻ */
+  margin-bottom: 24px;
+}
+
+/* Input để nhập xác nhận */
+.modal input {
+  width: 394px;
+  height: 28px;
+  flex-grow: 0;
+  padding: 4px;
+  border-radius: 5px;
+  border: solid 0.5px #888;
+  font-size: 14px;
+ 
+  margin-bottom: 28px;
+}
+
+/* Nút xác nhận xóa */
+.confirm-delete-btn {
+  font-family: 'Roboto', sans-serif;
+  width: 185px;
+  height: 32px;
+  padding: 6px 24px 7px 32px;
+  flex-grow: 0;
+  border-radius: 10px;
+  background-color: #f00;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s;
+  margin-bottom: 34px;
+}
+
+.confirm-delete-btn:hover {
+  background: #c9302c;
+}
+.success-message {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #4CAF50;  /* Màu nền xanh lá */
+  color: white;  /* Màu chữ trắng */
+  padding: 10px 20px;  /* Khoảng cách padding */
+  border-radius: 5px;  /* Góc bo tròn */
+  font-size: 16px;  /* Kích thước chữ */
+  font-weight: bold;
+  text-align: center;  /* Căn giữa chữ */
+  z-index: 1000;  /* Đảm bảo nó luôn hiển thị trên cùng */
+  opacity: 0;
+  animation: fadeInOut 3s forwards;  /* Hiệu ứng fade-in và fade-out */
+}
+/* Hiệu ứng fade-in khi mở modal */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
