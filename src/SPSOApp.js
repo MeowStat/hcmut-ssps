@@ -6,6 +6,7 @@ import Config from "./SPSOApp/configuration";
 import FileConfig from "./SPSOApp/configuration/FileConfig";
 import ManagePrinter from "./js/ManagePrinter";
 import PrinterDetails from "./js/PrinterDetails";
+import EditPrinterDetails from "./js/EditPrinterDetails";
 import { Route, Routes } from "react-router-dom";
 import "./css/SPSOApp.css";
 
@@ -25,6 +26,7 @@ const SPSOApp = () => {
                     <Route path="/config/fileconfig" element={<FileConfig />} />
                     <Route path="/printer" element={<ManagePrinter/>} />
                     <Route path="/printer/:id" element={<PrinterDetails />} />
+                    <Route path="/printer/edit/:id" element={<EditPrinterDetails />} />
                     <Route path="/" element={<p>Path not found</p>} />
                 </Routes>
             </main>

@@ -1,0 +1,180 @@
+
+  .edit-printer-container{
+    width: 1110px;
+    height: 961px;
+    border: solid 1px #000;
+    overflow: hidden;
+    background-color: rgba(255, 255, 255, 0.5);
+    position: relative;
+    margin: 0 auto; /* Căn giữa nội dung */
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    flex-direction: column; /* Sắp xếp các thành phần theo cột */
+    align-items: center;    /* Căn giữa theo chiều ngang */
+  }
+  .title2{
+    font-size: 35px;
+  font-weight: 600;
+    margin-top: 51px;
+    margin-bottom: 0px;
+  }
+  .note{
+    font-size: 14px;
+  font-weight: 300;
+  font-style: italic;
+  text-align: left;
+  color: #888;
+  margin-bottom: 0px;
+  margin-top: 7px;
+  }
+  .text-style-1{
+    color: #f00;
+  }
+  .printer-background {
+    width: 800px; /* Điều chỉnh kích thước hình in */
+    height: auto;
+    opacity: 0.1;
+    z-index: 1;
+    pointer-events: none;
+    position: absolute; /* Đặt ảnh nền bên dưới */
+    overflow: hidden; /* Ẩn các phần bị tràn */
+
+  }
+  
+  .printer-background img {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+  .title3 {
+    text-align: left;
+    font-size: 14px;
+    font-style: italic;
+    text-align: left;
+    color: #888;
+    align-self: flex-start;
+    margin-left: 342px;
+    margin-top: 33px;
+  }
+  
+  /* Form container */
+  .form-container {
+    width: 318px;
+    height: 212px;
+    padding: 34px 56px 34px 51px;
+    border-radius: 5px;
+    border: solid 0.5px #888;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    z-index: 2;
+  }
+  .form-container-2 {
+    width: 318px;
+    height: 22px;
+    padding: 34px 56px 34px 51px;
+    border-radius: 5px;
+    border: solid 0.5px #888;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    z-index: 2;
+  }
+  /* Style cho từng nhóm thông tin */
+  .form-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 0px;
+  }
+  
+  .form-group label {
+    flex: 1;
+    font-size: 14px;
+  }
+  
+  .form-group input,
+  .form-group textarea {
+    font-family: 'Roboto', sans-serif;
+    flex: 2;
+    padding: 4px 15px 3px 9px;
+    font-size: 13px;
+    border: solid 0.5px #888;
+    border-radius: 5px;
+    margin-top: 0px;
+    font-weight: 300;
+  }
+  
+  .form-group textarea {
+    height: 50px;
+    resize: none;
+  }
+  
+  /* Style cho dấu (*) */
+  .required {
+    color: red;
+    font-size: 16px;
+    margin-left: 5px;
+  }
+  .required-none {
+    color: white;
+    font-size: 16px;
+    margin-left: 5px;
+  }
+  
+  /* EditPrinterDetails.css */
+  .form-actions {
+    display: flex; /* Dùng Flexbox để xếp các nút theo hàng ngang */
+    justify-content: flex-start; /* Căn lề về phía bên trái */
+    gap: 44px; /* Tạo khoảng cách ngang giữa hai nút */
+  }
+/* Style chung cho nút Cancel và Save */
+.form-actions button {
+  display: flex;
+  align-items: center; /* Căn chỉnh theo chiều dọc */
+  justify-content: center;
+  gap: 8px; /* Khoảng cách giữa icon và chữ */
+  width: 125px;
+  padding: 5px 10px; /* Thêm khoảng cách bên trong nút */
+  border: none; /* Loại bỏ đường viền mặc định */
+  border-radius: 5px; /* Bo tròn các góc */
+  cursor: pointer; /* Hiện con trỏ khi hover */
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Thêm hiệu ứng hover */
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff; /* Chữ trắng */
+  margin-top: 80px;
+  
+}
+
+/* Nút Save */
+.form-actions .save-btn {
+  background-color: #0057ff;
+}
+
+/* Nút Cancel */
+.form-actions .cancel-btn {
+  border: solid 0.5px #0057ff;
+  background-color: #fff;
+  color: #0057ff;
+}
+
+/* Hiệu ứng hover */
+.form-actions button:hover {
+  transform: scale(1.1); /* Tạo hiệu ứng zoom */
+}
+
+/* Hover cho từng nút */
+.form-actions .save-btn:hover {
+  background-color: #7a9bdd; /* Hiệu ứng xanh đậm khi hover */
+}
+
+.form-actions .cancel-btn:hover {
+  background-color: rgb(226, 223, 223); /* Hiệu ứng đỏ đậm khi hover */
+}
+
+  
+  
+  

@@ -56,12 +56,16 @@ const PrinterDetails = () => {
     }
   };
 
+  const handleModifyClick = () => {
+    navigate(`/printer/edit/${printer.id}`); // Navigate to the EditPrinterDetails page
+  };
+
   return (
     <div className="main-content">
       <div className="content">
     <h1 className='title'>Printer Management</h1>
     <div className="printer-details-container">
-    <button className="modify-btn">Modify</button>
+    <button className="modify-btn" onClick={handleModifyClick}>Modify</button>
       <header className="printer-header">
       Printer {printer.name}
       </header>
