@@ -13,7 +13,6 @@ const PrinterDetails = () => {
   const [printers, setPrinters] = useState(printerData); // Lưu trữ danh sách máy in trong state
   const [inputName, setInputName] = useState(""); // Trạng thái lưu tên máy in nhập vào
   const [error, setError] = useState(""); // Quản lý lỗi nếu tên máy in không đúng
-  const [successMessage, setSuccessMessage] = useState(""); // Thông báo thành công
 
   const printer = printerData.find((printer) => printer.id === id);
   if (!printer) {
@@ -46,11 +45,8 @@ const PrinterDetails = () => {
       const remainingPrinters = printers.filter((printerItem) => printerItem.id !== printer.id);
       setPrinters(remainingPrinters);
       setShowDeleteModal(false); // Đóng modal
-      setSuccessMessage(`Printer ${printer.name} has been successfully deleted.`); // Hiển thị thông báo thành công
-      setTimeout(() => {
-        setSuccessMessage(""); // Ẩn thông báo sau 3 giây
+        alert("Printer has been successfully deleted.")
         navigate("/printer"); // Điều hướng về trang "Manage Printers"
-      }, 3000); // Chờ 3 giây trước khi chuyển hướng
     } else {
       setError("Printer name does not match!"); // Hiển thị lỗi nếu tên không khớp
     }
@@ -146,12 +142,6 @@ const PrinterDetails = () => {
           >Delete</button>
         </div>
     </div>
-    {/* Thông báo thành công */}
-    {successMessage && (
-          <div className="success-message">
-            <p>{successMessage}</p>
-          </div>
-        )}
     {/* Modal Xác Nhận Xóa */}
     {showDeleteModal && (
           <div class="modal-overlay">

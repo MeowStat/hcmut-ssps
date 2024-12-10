@@ -1,7 +1,6 @@
 
 import React from 'react';
 import SearchBar from './SearchBar';
-import PrinterList from './PrinterList';
 import '../css/ManagePrinter.css';
 
 function ManagePrinter() {
@@ -10,7 +9,6 @@ function ManagePrinter() {
       <div className='content'>
       <h1 className='title'>Printer Management</h1>
       <SearchBar />
-      <PrinterList />
       </div>
       
     </div>

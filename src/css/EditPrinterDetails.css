@@ -84,6 +84,8 @@
   }
   /* Style cho từng nhóm thông tin */
   .form-group {
+    position: relative; /* Đặt context cho position của .error-text */
+    margin-bottom: 12px; /* Tăng khoảng cách để đủ chỗ hiển thị lỗi */
     display: flex;
     align-items: center;
     gap: 10px;
@@ -175,6 +177,15 @@
   background-color: rgb(226, 223, 223); /* Hiệu ứng đỏ đậm khi hover */
 }
 
-  
+.form-group .error-message {
+  color: red;
+  font-size: 8px;
+  margin-top: 4px;
+  display: block;
+  position: absolute; /* Đảm bảo lỗi không ảnh hưởng layout */
+  left: 0; /* Căn vị trí bên dưới label */
+  top: 100%; /* Hiển thị ngay dưới input */
+}
+
   
   
