@@ -3,6 +3,8 @@ import '../css/Navbar.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBell } from '@fortawesome/free-solid-svg-icons';
 import { faShoppingBag } from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'react-router-dom';
+
 const Navbar = () => {
   const notificationCount = 1;
   const bagCount = 1;
@@ -13,10 +15,10 @@ const Navbar = () => {
     <nav className="navbar">
       <div className="logo-nav">BKPrint</div>
       <ul className="nav-links">
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Dashboard</a></li>
-        <li><a href="#">Print now</a></li>
-        <li><a href="#">Buy pages</a></li>
+        <li><Link to="/homepage">Home</Link></li>
+        <li><Link to="/welcome">Dashboard</Link></li>
+        <li><Link to="/UploadFile">Print now</Link></li>
+        <li><Link to="/BuyPages">Buy pages</Link></li>
       </ul>
       <div className="user-info">
         <div className="icon hover-effect">

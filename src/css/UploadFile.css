@@ -1,13 +1,16 @@
 .upload-container {
   padding: 20px;
-  margin-left: 100px;
-  max-width: 1000px;
+  margin-left: 4%; /* Bỏ margin-left */
+  max-width: 100%; /* Cho phép sử dụng full width */
+  padding: 10px; /* Giảm padding trên mobile */
 }
 
 .upload-content {
   display: flex;
   gap: 20px;
   margin-top: 20px;
+  flex-direction: row; /* Xếp các phần tử theo chiều dọc trên mobile */
+  gap: 10px;
 }
 
 .upload-header {
@@ -22,12 +25,12 @@
 }
 
 .upload-area {
-  border: 2px dashed #ccc;
+  border: 2px dashed #1488D8;
   border-radius: 8px;
   padding: 20px;
   text-align: center;
   background-color: #f8f9fa;
-  background-image: url('../../public/backGroundUpLoad.png'); /* Thêm đường dẫn đến hình ảnh */
+  background-image: url('../../public/uploadFile.png'); /* Thêm đường dẫn đến hình ảnh */
   background-size: 100%;  
   background-position: center;
   background-repeat: no-repeat;
@@ -45,12 +48,10 @@
   position: relative;
 }
 
-
-
 .upload-area img {
   width: 60px;
+  height: 100px;
   /* Giảm kích thước icon */
-  height: auto;
   margin-bottom: 10px;
 }
 
@@ -62,6 +63,73 @@
 
 }
 
+.file-type-icon {
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+}
+
+.remove-file-btn {
+  background: none;
+  border: none;
+  color: #ff4444;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 0 8px;
+}
+
+.remove-file-btn:hover {
+  color: #ff0000;
+}
+
+.total-pages {
+  margin-top: 20px;
+  max-width: fit-content;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.file-item {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+  gap: 10px;
+}
+
+.totalAndPrint {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  flex-direction: column;
+}
+
+.separated-files {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: -3px;
+}
+
+.separated-files input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
+
+.separated-files label {
+  color: #666;
+  cursor: pointer;
+  user-select: none;
+}
+
+/* Tùy chỉnh style cho checkbox */
+.separated-files input[type="checkbox"] {
+  accent-color: #0088ff;
+  border: 2px solid #0088ff;
+  border-radius: 3px;
+}
+
 .required-format-container {
   color: #666;
   font-size: 0.9em;
@@ -69,6 +137,7 @@
   display: flex;
   flex-direction: row;
   gap: 10px;
+  align-items: center;
 }
 
 .required-format-text {
@@ -77,6 +146,9 @@
   padding: 5px;
   background-color: #e7e7e7;
   color: #0a0909;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .required-format-normal {
@@ -224,31 +296,6 @@ input {
   }
 }
 
-/* Dark mode support */
-@media (prefers-color-scheme: dark) {
-  .upload-container {
-    background-color: #1a1a1a;
-    color: #fff;
-  }
-
-  .upload-area {
-    border-color: #444;
-    background-color: rgba(45, 45, 45, 0.8); /* Thêm độ trong suốt */
-    background-blend-mode: overlay; /* Blend với background image */
-  }
-
-  select,
-  input {
-    background-color: #333;
-    color: #fff;
-    border-color: #444;
-  }
-
-  .file-item {
-    border-color: #333;
-  }
-}
-
 .config-section {
   margin-right: auto;
   margin-top: 200px;
@@ -263,6 +310,7 @@ input {
   display: flex;
   flex-direction: row;
   gap: 20px;
+  margin-left: -2%;
 }
 
 .config-grid {
@@ -294,6 +342,83 @@ input {
 .config-item label {
   font-size: 1.2em;
   font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .upload-header {
+    flex-direction: column;
+    gap: 5px;
+    text-align: center;
+  }
+
+  .upload-header h2 {
+    font-size: 24px !important; /* Giảm kích thước font */
+  }
+
+  .right-section {
+    max-width: 100%;
+  }
+
+  .upload-area {
+    max-width: 100%;
+    height: 200px; /* Giảm chiều cao */
+    margin: 0 auto;
+  }
+
+  .file-list {
+    padding: 10px;
+    min-width: auto;
+  }
+
+  .config-section {
+    margin-top: 20px;
+    padding: 10px;
+  }
+
+  .config-header {
+    margin-left: 0;
+    text-align: center;
+  }
+
+  .config-grid {
+    grid-template-columns: 1fr; /* Một cột trên mobile */
+  }
+
+  .config-item {
+    max-width: 100%;
+  }
+
+  .config-item select,
+  .config-item input {
+    width: 100%; /* Full width trên mobile */
+  }
+
+  .file-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .file-status {
+    align-self: flex-end;
+    position: absolute;
+    right: 10px;
+  }
+
+  .totalAndPrint {
+    margin-top: 10px;
+  }
+}
+
+/* Thêm breakpoint cho màn hình cực nhỏ */
+@media (max-width: 320px) {
+  .upload-header h2 {
+    font-size: 20px !important;
+  }
+
+  .required-format-container {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 }
 
 

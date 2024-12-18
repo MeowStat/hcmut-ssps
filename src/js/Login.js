@@ -1,12 +1,15 @@
 // src/js/Login.js
 import React from 'react';
 import '../css/Login.css';
-import Navbar from './Navbar';
+import SPSOApp from "../SPSOApp";
+
 import Footer from './Footer';
 const Login = () => {
+  const handleSPSOClick = () => {
+    window.location.replace('SPSO/');
+  };
   return (
     <div className="page-container">
-      <Navbar />
       <div className="content-wrap">
         <div className="login-container">
           <h1 className="title">HCMUT</h1>
@@ -14,7 +17,7 @@ const Login = () => {
           <div className="login-box">
             <h3>Log in using your account on:</h3>
             <button className="login-button" onClick={() => window.location.href = 'hcmut-sso/index.html'}>HCMUT account</button>
-            <button className="login-button">SPSO</button>
+            <button className="login-button" onClick={handleSPSOClick}>SPSO</button>
             <button className="cookie-notice">Cookies notice</button>
           </div>
         </div>

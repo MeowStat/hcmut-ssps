@@ -46,14 +46,14 @@ const PrinterDetails = () => {
       setPrinters(remainingPrinters);
       setShowDeleteModal(false); // Đóng modal
         alert("Printer has been successfully deleted.")
-        navigate("/printer"); // Điều hướng về trang "Manage Printers"
+        navigate("../printer"); // Điều hướng về trang "Manage Printers"
     } else {
       setError("Printer name does not match!"); // Hiển thị lỗi nếu tên không khớp
     }
   };
 
   const handleModifyClick = () => {
-    navigate(`/printer/edit/${printer.id}`); // Navigate to the EditPrinterDetails page
+    navigate(`../printer/edit/${printer.id}`); // Navigate to the EditPrinterDetails page
   };
 
   return (

@@ -101,3 +101,13 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 **Update:**
 - Config `tailwind.config.js`
 - Data Table in Dashboard listen change in `data/RecentPrint.tsx`
+
+### Update 18/12
+***Add new:***
+- Merge all source (maybe) from `branch/clgslsm` for login page when location is index and SPSO button login to go SPSO_UI at href `domain.xyz/SPSO/{}`.
+- Add sub route SPSOApp.
+
+***Update:***
+- Add import locate file to SPSOApp sub href in `src/index.js`
+- Config some (or all, i hope that) href of Printer Manager.
+- `All printing logs, Statistics, Report, Manual and Tips` are not support in your location!

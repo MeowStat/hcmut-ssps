@@ -15,19 +15,19 @@ const tabs = [
     id: "dashboard_tab",
     label: "Dashboard",
     icon: dashboard_icon,
-    path: "/dashboard",
+    path: "dashboard",
   },
   {
     id: "printer_tab",
     label: "Printer Management",
     icon: printer_management_icon,
-    path: "/printer",
+    path: "printer",
   },
   {
     id: "config_tab",
     label: "Configuration",
     icon: config_icon,
-    path: "/config",
+    path: "config",
   },
   {
     id: "log_tab",

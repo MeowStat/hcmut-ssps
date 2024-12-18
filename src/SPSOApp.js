@@ -22,14 +22,14 @@ const SPSOApp = () => {
             <main className="content">
                 <Routes>
                     <Route index element={<Dashboard />} />
-                    <Route path="/dashboard" element={<Dashboard />} />
-                    <Route path="/config" element={<Config />} />
-                    <Route path="/config/fileconfig" element={<FileConfig />} />
-                    <Route path="/printer" element={<ManagePrinter/>} />
-                    <Route path="/printer/:id" element={<PrinterDetails />} />
-                    <Route path="/printer/edit/:id" element={<EditPrinterDetails />} />
-                    <Route path="/printer/new" element={<NewPrinter />} />
-                    <Route path="/" element={<p>Path not found</p>} />
+                    <Route path="dashboard" element={<Dashboard />} />
+                    <Route path="config" element={<Config />} />
+                    <Route path="config/fileconfig" element={<FileConfig />} />
+                    <Route path="printer" element={<ManagePrinter/>} />
+                    <Route path="printer/:id" element={<PrinterDetails />} />
+                    <Route path="printer/edit/:id" element={<EditPrinterDetails />} />
+                    <Route path="printer/new" element={<NewPrinter />} />
+                    <Route path="" element={<p>Path not found</p>} />
                 </Routes>
             </main>
         </div>

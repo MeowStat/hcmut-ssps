@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../css/ChoosePrinter.css';
+import Navbar from './Navbar'; // Add this import 
+import Footer from './Footer'; // Add this import 
 
 const ChoosePrinter = () => {
   const navigate = useNavigate(); // Thêm hook useNavigate
@@ -53,13 +55,17 @@ const ChoosePrinter = () => {
     setSelectedPrinter(printerId);
   };
   const handleBack = () => {
-    navigate('/'); // Điều hướng đến trang UploadFile
+    navigate('/UploadFile'); // Điều hướng đến trang UploadFile
   };
   const handleNext = () => {
     navigate('/Checkout'); // Điều hướng đến trang Checkout
   };
   return (
+    <>
+    <Navbar/>
+    
     <div className="choose-printer-container">
+      
       <div className="header">
         <h2>Choose Printer</h2>
         <div className="timer">
@@ -119,14 +125,12 @@ const ChoosePrinter = () => {
 
       <div className="buttons">
         <button className="back-button" onClick={handleBack}>Back</button>
-        <button 
-          className="next-button"
-          onClick={handleNext}
-        >
-          Next
-        </button>
+        <button className="next-button" onClick={handleNext}>Next</button>
       </div>
+      
     </div>
+    <Footer/>
+    </>
   );
 };
 

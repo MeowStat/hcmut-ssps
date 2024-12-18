@@ -1,10 +1,9 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../css/BuyPage.css";
-import HeaderPage from "./HeaderPage";
-import ContactInfo from "./ContactInfo";
-
-function BuyPages() {
+import Navbar from './Navbar'; // Add this import 
+import Footer from "./Footer";
+export default function BuyPages() {
   const navigate = useNavigate();
   const [a4Count, setA4Count] = useState(0);
   const [a3Count, setA3Count] = useState(0);
@@ -25,15 +24,16 @@ function BuyPages() {
   };
 
   return (
+    <>
+      <Navbar/>
     <div className="buy-pages">
-      <HeaderPage />
       <h1>Buy Pages</h1>
       <hr
         style={{
           border: "none",
           borderTop: "1px dashed #000000",
-          width: "80%", // Làm cho đường kẻ dài hơn
-          marginLeft: "10%", // Để căn chỉnh lại cho cân đối
+          width: "100%", // Làm cho đường kẻ dài hơn
+          marginLeft: "0%", // Để căn chỉnh lại cho cân đối
           height: "0.1px",
         }}
       />
@@ -64,11 +64,11 @@ function BuyPages() {
           </button>
         </div>
       </div>
-
-      <button onClick={() => navigate("/Cart")}>Go to Cart</button>
-      <ContactInfo />
+      <div className="go-to-cart">
+        <button onClick={() => navigate("/Cart")}>Go to Cart</button>
+      </div>
     </div>
+    <Footer/>
+  </>
   );
 }
-
-export default BuyPages;

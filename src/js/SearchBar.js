@@ -10,7 +10,7 @@ const SearchBar = () => {
   const [searchTerm, setSearchTerm] = useState(''); // State để lưu giá trị tìm kiếm
 
   const handleAddPrinterClick = () => {
-    navigate('/printer/new'); // Điều hướng đến trang thêm máy in
+    navigate('new'); // Điều hướng đến trang thêm máy in
   };
 
   // Lọc danh sách máy in dựa trên giá trị tìm kiếm
@@ -46,7 +46,7 @@ const SearchBar = () => {
         {filteredPrinters.map((printer) => (
           <PrinterItem
             key={printer.id}
-            onClick={() => navigate(`/printer/${printer.id}`)}
+            onClick={() => navigate(`${printer.id}`)}
             name={printer.name}
             status={printer.status}
             remain={printer.remain}
