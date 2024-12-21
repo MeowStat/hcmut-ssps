@@ -68,3 +68,46 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+## Changelog
+
+### Update 27/11
+**Add new:**
+- `node_module/find-root`
+- `@nivo/line` for graph
+- `SPSOApp.css` for flexing row
+- `Components/` - Header text and StatBox function. 
+- `Components/BarChart` to draw graph.
+- `Dashboard/` for index page
+
+**Update:**
+- `src/index.js` use path * to subroute
+- Add "path" in tabs json and use Link to covered button in SPSOMenu.js
+- Use route in SPSOApp.js
+
+### Update 1/12
+**Add new:**
+- `@tanstack/react-table@8.20.5`
+- Add dependencies `tailwindcss-animate` `class-variance-authority` `clsx` `tailwind-merge` `lucide-react`
+- `tsconfig.json`
+- `global.css`
+- `components.json` to pack and `lib/utils.ts` for cn helper.
+- configuration index page with FileConfig support by Bootstrap
+- Components/columns.tsx|DataTable.tsx|Table.tsx with TypeScript for read data and display Data table in Dashboard
+- New 4 file .svg to icon
+
+
+**Update:**
+- Config `tailwind.config.js`
+- Data Table in Dashboard listen change in `data/RecentPrint.tsx`
+
+### Update 18/12
+***Add new:***
+- Merge all source (maybe) from `branch/clgslsm` for login page when location is index and SPSO button login to go SPSO_UI at href `domain.xyz/SPSO/{}`.
+- Add sub route SPSOApp.
+
+***Update:***
+- Add import locate file to SPSOApp sub href in `src/index.js`
+- Config some (or all, i hope that) href of Printer Manager.
+- `All printing logs, Statistics, Report, Manual and Tips` are not support in your location!

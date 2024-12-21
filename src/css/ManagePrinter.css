@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+
+
+  
+  .main-content {
+    flex: 1;
+    display: flex;
+  }
+  .content {
+    flex: 1; /* Phần nội dung co giãn để lấp đầy không gian */
+    padding: 20px;
+    overflow-y: auto;
+    background-color: #f9f9f9; /* Màu nền nhẹ */
+  }
+  .title {
+    font-family: 'Roboto', sans-serif;
+    margin-left: 60px;
+    color: #000;
+    font-size: 30px;
+  }

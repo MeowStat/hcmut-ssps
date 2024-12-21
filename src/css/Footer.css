@@ -1,0 +1,29 @@
+.footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  width: 100%;
+  position: relative; /* Remove fixed position for now */
+}
+
+.footer-content {
+  font-family: 'Segoe UI';
+  font-style: normal;
+  font-weight: 200;
+  font-size: 16px;
+  line-height: 19px;
+  background-color: white; /* Match footer background color */
+  color: black;
+  padding: 20px;
+  text-align: left;
+  border: none; /* Remove any border */
+}
+
+.footer-bottom {
+  background-color: #333; /* Ensure this section is black */
+  padding: 10px 0;
+  text-align: center;
+  color: #fff;
+  border-top: none; /* Remove any border */
+}
+
