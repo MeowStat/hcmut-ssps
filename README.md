@@ -116,3 +116,8 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 - Add import locate file to SPSOApp sub href in `src/index.js`
 - Config some (or all, i hope that) href of Printer Manager.
 - `All printing logs, Statistics, Report, Manual and Tips` are not support in your location!
+
+### Update 21/12
+***Add new:***
+- Merge to main branch
+- Deploy with Vercel
