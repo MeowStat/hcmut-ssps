@@ -1,6 +1,10 @@
-# Getting Started with Create React App
+# HCMUT-SPSS
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+## Description
+
+HCMUT-SPSS is a comprehensive smart printing solution designed specifically for the students of Ho Chi Minh City University of Technology. It aims to simplify and streamline the printing process across various campuses, offering easy access to printing services through a user-friendly digital interface.
 
 ## Available Scripts
 
